@@ -1,0 +1,12 @@
+sudo docker image build . -t miniep6
+
+sudo docker container run --name caddy -p 8084:80 -d miniep6
+
+sudo docker container stop caddy
+
+sudo docker container rm caddy
+
+sudo docker image build . -t miniep6
+
+sudo docker container run --name caddy -p 8084:80 -v $(pwd):/usr/src/pages -d miniep6
+
