@@ -8,5 +8,7 @@ sudo docker container rm caddy
 
 sudo docker image build . -t miniep6
 
+cd pages
+
 sudo docker container run --name caddy -p 8084:80 -v $(pwd):/usr/src/pages -d miniep6
 
